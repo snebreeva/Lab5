@@ -1,26 +1,20 @@
-nums1, nums2 = [9, 5 , 789, 786, 787, 788], [] 
-
 def medians(nums1, nums2):
-    newnums = nums1 + nums2
-    newnums = sorted(newnums)
-    
-    if len(newnums) == 0:
-        print('ну ты шо а')
-        
-    elif len(newnums) == 1:
-        a = newnums[0]
-        print(a)
-        
-    elif len(newnums) % 2 == 1:
-        c = newnums[len(newnums) // 2]
-        print(f'объединенный список = {newnums}, медиана {c}.')        
-        
-    elif len(newnums) % 2 == 0:
-        b1 = newnums[len(newnums) // 2 - 1]
-        b2 = newnums[len(newnums) // 2]
-        b = (b1 + b2) / 2
-        print(f'объединенный список = {newnums}, медиана ({b1} + {b2}) / 2 = {b}.')
+    a = []
+    a = nums1 + nums2
+    a1 = sorted(a)
+    b = len(a1)
+    # если это нулевые списки, значит где-то закралась ошибка
+    if b == 0:
+        print('бегом переделывать')
+    # теперь проверим длину списка
+    elif b % 2 == 1:
+        m = a1[b // 2]
+    elif b % 2 == 0:
+        m = (a1[b // 2 ] + a1[b // 2 - 1]) / 2
+    # выведем результат
+    print(m)
 
 
 if __name__ == "__main__":
+    nums1, nums2 =  [5, 5], [4, 4]
     medians(nums1, nums2)
